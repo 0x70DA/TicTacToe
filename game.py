@@ -20,5 +20,6 @@ class TicTacToe:
         for row in [self.board[i*3:(i*3)+3] for i in range(3)]:
             print('|' + ' | '.join(row) + '|')
 
-
-TicTacToe.print_board_nums()
+    def avialable_moves(self):
+        """Return a list of available moves."""
+        return [index for index, value in enumerate(self.board) if value == " "]
