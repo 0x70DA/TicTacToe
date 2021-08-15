@@ -9,7 +9,8 @@ class TicTacToe:
         self.board = [' ' for _ in range(9)]
         self.current_winner = None
 
-    def print_board_nums(self):
+    @staticmethod
+    def print_board_nums():
         """Print a numbered board at the beginning of the game."""
         for row in [[str(i) for i in range(j*3, (j*3)+3)] for j in range(3)]:
             print('|' + ' | '.join(row) + '|')
@@ -18,3 +19,6 @@ class TicTacToe:
         """Print the current board"""
         for row in [self.board[i*3:(i*3)+3] for i in range(3)]:
             print('|' + ' | '.join(row) + '|')
+
+
+TicTacToe.print_board_nums()
