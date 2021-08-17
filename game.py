@@ -53,3 +53,6 @@ class TicTacToe:
                 return True
 
         return False
+
+    def has_empty_squares(self):
+        return ' ' in self.board
