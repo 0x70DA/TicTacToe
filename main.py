@@ -9,13 +9,15 @@ def play(game, player_x, player_y, print_game=True):
 
     letter = 'X'
     while game.has_empty_squares():
-        square = player_x.get_move(
-            game) if letter == "X" else player_y.get_move(game)
+        if letter == 'X':
+            move = player_x.get_move(game)
+        else:
+            move = player_y.get_move(game)
 
         # check if the move is available
-        if game.make_move(square, letter):
+        if game.make_move(move, letter):
             if print_game:
-                print(f"{letter} makes a move to square {square}")
+                print(f"{letter} makes a move to square {move}")
                 game.print_board()
                 print()
 

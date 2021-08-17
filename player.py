@@ -19,12 +19,12 @@ class HumanPlayer:
 
     def get_move(self, game):
         while True:
-            square = input(f"{self.letter}'s turn. Enter move(0-8): ")
+            move = input(f"{self.letter}'s turn. Enter move(0-8): ")
             try:
-                val = int(square)
-                if val not in game.available_moves():
+                move = int(move)
+                if move not in game.available_moves():
                     raise ValueError
                 break
             except ValueError:
                 print("Invalid square. Choose again.")
-        return val
+        return move
