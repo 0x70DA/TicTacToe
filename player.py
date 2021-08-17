@@ -1,33 +1,21 @@
-import math
 import random
 
 
-class PLayer:
-    """Base player class"""
-
-    def __init__(self, letter):
-        self.letter = letter
-
-    def get_move(self):
-        """Overriden in the child classes"""
-        pass
-
-
-class ComputerPlayer(Player):
+class ComputerPlayer:
     """A computer player class, that randomly chooses moves."""
 
     def __init__(self, letter):
-        super().__init__(letter)
+        self.letter = letter
 
     def get_move(self, game):
         return random.choice(game.available_moves())
 
 
-class HumanPlayer(Player):
+class HumanPlayer:
     """A Human player class."""
 
     def __init__(self, letter):
-        super().__init(letter)
+        self.letter = letter
 
     def get_move(self, game):
         while True:
