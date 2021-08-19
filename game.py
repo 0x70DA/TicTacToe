@@ -5,7 +5,7 @@ class TicTacToe:
     def __init__(self):
         # create empty board
         self.board = [' ' for _ in range(9)]
-        self.current_winner = None
+        self.winner = None
 
     @staticmethod
     def print_board_nums():
@@ -26,7 +26,7 @@ class TicTacToe:
         if self.board[move] == " ":
             self.board[move] = letter
             if self.check_winner(move, letter):
-                self.current_winner = letter
+                self.winner = letter
             return True
         return False
 
