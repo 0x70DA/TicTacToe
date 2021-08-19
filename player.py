@@ -1,6 +1,5 @@
 import random
 import math
-from game import TicTacToe
 
 
 class ComputerPlayer:
@@ -36,7 +35,7 @@ class AIPlayer:
     def __init__(self, letter):
         self.letter = letter
 
-    def get_move(self, game: TicTacToe):
+    def get_move(self, game):
         if len(game.available_moves()) == 9:
             # pick a random square as the first move.
             move = random.choice(game.available_moves())
@@ -45,7 +44,7 @@ class AIPlayer:
             move = self.minimax(game, self.letter)['position']
         return move
 
-    def minimax(self, state: TicTacToe, player):
+    def minimax(self, state, player):
         max_player = self.letter  # the smart computer player
         other_player = 'O' if player == 'X' else 'X'
 

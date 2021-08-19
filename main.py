@@ -1,6 +1,6 @@
 import time
 from game import TicTacToe
-from player import HumanPlayer, ComputerPlayer
+from player import HumanPlayer, ComputerPlayer, AIPlayer
 
 
 def play(game, player_x, player_y, print_game=True):
@@ -21,7 +21,7 @@ def play(game, player_x, player_y, print_game=True):
                 game.print_board()
                 print()
 
-            if game.current_winner != None:
+            if game.winner != None:
                 if print_game:
                     print(f"{letter} wins!!!")
                 return letter  # end the loop and exit the game
@@ -36,5 +36,5 @@ def play(game, player_x, player_y, print_game=True):
 if __name__ == "__main__":
     game = TicTacToe()
     player1 = HumanPlayer('X')
-    player2 = ComputerPlayer('O')
+    player2 = AIPlayer('O')
     play(game, player1, player2, True)
